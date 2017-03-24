@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntroScreenViewController" customModule="Dr_Text" customModuleProvider="target">
+            <connections>
+                <outlet property="middleLbl" destination="L5s-eU-t9O" id="fXN-uU-Rj3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ima-2d-qRw">
+                    <rect key="frame" x="0.0" y="270" width="375" height="126"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTz-RL-3Ga">
+                            <rect key="frame" x="0.0" y="0.0" width="314" height="126"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get answers to any \nhealth question, \nanytime,, \nanywhere" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5s-eU-t9O">
+                                    <rect key="frame" x="26" y="0.0" width="261" height="126"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="261" id="xtD-0X-bBh"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="L5s-eU-t9O" firstAttribute="leading" secondItem="kTz-RL-3Ga" secondAttribute="leading" constant="26" id="hLh-AR-fqH"/>
+                                <constraint firstAttribute="height" constant="126" id="k15-yQ-4to"/>
+                                <constraint firstItem="L5s-eU-t9O" firstAttribute="top" secondItem="kTz-RL-3Ga" secondAttribute="top" id="oKe-IX-EbV"/>
+                                <constraint firstAttribute="bottom" secondItem="L5s-eU-t9O" secondAttribute="bottom" id="xmb-ye-5hl"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kTz-RL-3Ga" secondAttribute="trailing" constant="61" id="Fpn-iv-wqM"/>
+                        <constraint firstItem="kTz-RL-3Ga" firstAttribute="leading" secondItem="ima-2d-qRw" secondAttribute="leading" id="JSy-9L-Z3z"/>
+                        <constraint firstItem="kTz-RL-3Ga" firstAttribute="top" secondItem="ima-2d-qRw" secondAttribute="top" id="QV2-LC-ogk"/>
+                        <constraint firstAttribute="height" constant="126" id="efy-50-dje"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ima-2d-qRw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AW2-Zg-ZVB"/>
+                <constraint firstAttribute="trailing" secondItem="ima-2d-qRw" secondAttribute="trailing" id="OpO-ga-FLO"/>
+                <constraint firstItem="ima-2d-qRw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="eUf-8G-8U0"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>

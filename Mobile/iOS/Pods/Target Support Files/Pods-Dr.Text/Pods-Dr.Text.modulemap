@@ -1,0 +1,6 @@
+framework module Pods_Dr_Text {
+  umbrella header "Pods-Dr.Text-umbrella.h"
+
+  export *
+  module * { export * }
+}

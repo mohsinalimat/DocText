@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTextFieldView" customModule="Dr_Text" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomLineLbl" destination="BQ4-Oo-qgb" id="auk-MF-3xq"/>
+                <outlet property="floatingLbl" destination="SEv-Kv-pmI" id="GZg-pv-Ych"/>
+                <outlet property="floatingLblLCons" destination="S7h-i2-q9V" id="Khn-Vv-lAO"/>
+                <outlet property="floatingLblTCons" destination="7jz-fG-g1M" id="Hkp-Ow-DCk"/>
+                <outlet property="textField" destination="i6a-yy-nfm" id="vrI-dX-oF4"/>
+                <outlet property="view" destination="iN0-l3-epB" id="2cd-8K-X3o"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i6a-yy-nfm">
+                    <rect key="frame" x="0.0" y="22" width="375" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="TsW-23-AnE"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="vvU-EG-Fb5"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQ4-Oo-qgb">
+                    <rect key="frame" x="0.0" y="54" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="KTS-Tu-00Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEv-Kv-pmI">
+                    <rect key="frame" x="10" y="22" width="365" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="acs-uD-lHH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.58039215686274503" green="0.58431372549019611" blue="0.59215686274509804" alpha="0.99572229677914115" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SEv-Kv-pmI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="7jz-fG-g1M"/>
+                <constraint firstItem="BQ4-Oo-qgb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hxa-7I-0YO"/>
+                <constraint firstItem="BQ4-Oo-qgb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="54" id="Ii6-41-NP0"/>
+                <constraint firstAttribute="trailing" secondItem="SEv-Kv-pmI" secondAttribute="trailing" id="KhQ-dJ-fQ9"/>
+                <constraint firstItem="i6a-yy-nfm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RAT-H3-VMP"/>
+                <constraint firstItem="SEv-Kv-pmI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="S7h-i2-q9V"/>
+                <constraint firstAttribute="trailing" secondItem="BQ4-Oo-qgb" secondAttribute="trailing" id="Thu-xj-LLo"/>
+                <constraint firstItem="i6a-yy-nfm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="omH-7m-iiM"/>
+                <constraint firstAttribute="trailing" secondItem="i6a-yy-nfm" secondAttribute="trailing" id="yZv-71-9nj"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="84.5" y="-201.5"/>
+        </view>
+    </objects>
+</document>

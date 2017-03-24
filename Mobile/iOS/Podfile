@@ -1,0 +1,30 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+use_frameworks!
+
+target :'Dr.Text' do
+    #    pod 'AWSAutoScaling'
+    # pod 'AWSCloudWatch'
+    # pod 'AWSEC2'
+    # pod 'AWSElasticLoadBalancing'
+    # pod 'AWSIoT'
+    # pod 'AWSKinesis'
+    # pod 'AWSLambda'
+    # pod 'AWSMachineLearning'
+    # pod 'AWSMobileAnalytics'
+    #  pod 'AWSSES'
+    # pod 'AWSSimpleDB'
+    # pod 'AWSSQS'
+    pod 'AWSDynamoDB'
+    pod 'AWSCognito'
+    pod 'AWSCognitoIdentityProvider'
+    pod 'AWSS3'
+    pod 'AWSSNS'
+    pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'JSQMessagesViewController', '~> 7.3'
+    pod 'SDWebImage', '~>3.8'
+    pod 'SCSiriWaveformView'
+    pod 'ReachabilitySwift', '~> 3'
+    pod 'Alamofire', '~> 4.0'
+end

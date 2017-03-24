@@ -1,0 +1,301 @@
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Resources": {
+		"tableDeviceToken": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [{
+					"AttributeName": "deviceId",
+					"AttributeType": "S"
+				}, {
+					"AttributeName": "userId",
+					"AttributeType": "S"
+				}],
+				"KeySchema": [{
+					"AttributeName": "userId",
+					"KeyType": "HASH"
+				}, {
+					"AttributeName": "deviceId",
+					"KeyType": "RANGE"
+				}],
+				"ProvisionedThroughput": {
+					"ReadCapacityUnits": "5",
+					"WriteCapacityUnits": "5"
+				},
+				"TableName": "DeviceToken"
+			}
+		},
+		"tableInvitation": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [{
+					"AttributeName": "PhoneNo",
+					"AttributeType": "S"
+				}],
+				"KeySchema": [{
+					"AttributeName": "PhoneNo",
+					"KeyType": "HASH"
+				}],
+				"ProvisionedThroughput": {
+					"ReadCapacityUnits": "5",
+					"WriteCapacityUnits": "5"
+				},
+				"TableName": "Invitation"
+			}
+		},
+		"tableRoomTable": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [{
+					"AttributeName": "doctorId",
+					"AttributeType": "S"
+				}, {
+					"AttributeName": "patientId",
+					"AttributeType": "S"
+				}, {
+					"AttributeName": "room_id",
+					"AttributeType": "S"
+				}],
+				"KeySchema": [{
+					"AttributeName": "room_id",
+					"KeyType": "HASH"
+				}],
+				"ProvisionedThroughput": {
+					"ReadCapacityUnits": "5",
+					"WriteCapacityUnits": "5"
+				},
+				"TableName": "Room",
+				"GlobalSecondaryIndexes": [{
+					"IndexName": "doctorId-patientId-index",
+					"KeySchema": [{
+						"AttributeName": "doctorId",
+						"KeyType": "HASH"
+					}, {
+						"AttributeName": "patientId",
+						"KeyType": "RANGE"
+					}],
+					"Projection": {
+						"ProjectionType": "ALL"
+					},
+					"ProvisionedThroughput": {
+						"ReadCapacityUnits": "1",
+						"WriteCapacityUnits": "1"
+					}
+				}]
+			}
+		},
+		"tableTransaction": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [{
+					"AttributeName": "ChargeId",
+					"AttributeType": "S"
+				}],
+				"KeySchema": [{
+					"AttributeName": "ChargeId",
+					"KeyType": "HASH"
+				}],
+				"ProvisionedThroughput": {
+					"ReadCapacityUnits": "5",
+					"WriteCapacityUnits": "5"
+				},
+				"TableName": "Transaction"
+			}
+		},
+		"tableUser": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [{
+					"AttributeName": "userName",
+					"AttributeType": "S"
+				}],
+				"KeySchema": [{
+					"AttributeName": "userName",
+					"KeyType": "HASH"
+				}],
+				"ProvisionedThroughput": {
+					"ReadCapacityUnits": "5",
+					"WriteCapacityUnits": "5"
+				},
+				"TableName": "User"
+			}
+		},
+		"tableUserIdDeviceTokenMap": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [{
+					"AttributeName": "DeviceToken",
+					"AttributeType": "S"
+				}, {
+					"AttributeName": "UserId",
+					"AttributeType": "S"
+				}],
+				"KeySchema": [{
+					"AttributeName": "UserId",
+					"KeyType": "HASH"
+				}, {
+					"AttributeName": "DeviceToken",
+					"KeyType": "RANGE"
+				}],
+				"ProvisionedThroughput": {
+					"ReadCapacityUnits": "5",
+					"WriteCapacityUnits": "5"
+				},
+				"TableName": "DeviceTokenMap"
+			}
+		},
+		"tableinvitationtable": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [{
+					"AttributeName": "PhoneNo",
+					"AttributeType": "S"
+				}],
+				"KeySchema": [{
+					"AttributeName": "PhoneNo",
+					"KeyType": "HASH"
+				}],
+				"ProvisionedThroughput": {
+					"ReadCapacityUnits": "5",
+					"WriteCapacityUnits": "5"
+				},
+				"TableName": "Invitation2"
+			}
+		},
+		"tablelambdachat": {
+			"Type": "AWS::DynamoDB::Table",
+			"Properties": {
+				"AttributeDefinitions": [{
+					"AttributeName": "message_id",
+					"AttributeType": "S"
+				}, {
+					"AttributeName": "room_id",
+					"AttributeType": "S"
+				}, {
+					"AttributeName": "server_time",
+					"AttributeType": "S"
+				}],
+				"KeySchema": [{
+					"AttributeName": "message_id",
+					"KeyType": "HASH"
+				}, {
+					"AttributeName": "room_id",
+					"KeyType": "RANGE"
+				}],
+				"ProvisionedThroughput": {
+					"ReadCapacityUnits": "5",
+					"WriteCapacityUnits": "5"
+				},
+				"TableName": "Lambdachat",
+				"GlobalSecondaryIndexes": [{
+					"IndexName": "room_id-server_time-index",
+					"KeySchema": [{
+						"AttributeName": "room_id",
+						"KeyType": "HASH"
+					}, {
+						"AttributeName": "server_time",
+						"KeyType": "RANGE"
+					}],
+					"Projection": {
+						"ProjectionType": "ALL"
+					},
+					"ProvisionedThroughput": {
+						"ReadCapacityUnits": "1",
+						"WriteCapacityUnits": "1"
+					}
+				}]
+			}
+		},
+		"s3mrtext": {
+			"Type": "AWS::S3::Bucket",
+			"Properties": {
+				"AccessControl": "Private",
+				"VersioningConfiguration": {
+					"Status": "Suspended"
+				}
+			}
+		},
+		"topicMrText": {
+			"Type": "AWS::SNS::Topic",
+			"Properties": {
+				"DisplayName": "Mr.Text",
+				"Subscription": [{
+					"Endpoint": "arn:aws:lambda:us-west-2:476225084366:function:saveChatMessage",
+					"Protocol": "lambda"
+				}, {
+					"Endpoint": "arn:aws:lambda:us-west-2:476225084366:function:LambdaChat",
+					"Protocol": "lambda"
+				}]
+			}
+		},
+		"snspolicyMrText": {
+			"Type": "AWS::SNS::TopicPolicy",
+			"Properties": {
+				"Topics": [{
+					"Ref": "topicMrText"
+				}],
+				"PolicyDocument": {
+					"Version": "2008-10-17",
+					"Id": "__default_policy_ID",
+					"Statement": [{
+						"Sid": "__default_statement_ID",
+						"Effect": "Allow",
+						"Principal": {
+							"AWS": "*"
+						},
+						"Action": [
+							"SNS:GetTopicAttributes",
+							"SNS:SetTopicAttributes",
+							"SNS:AddPermission",
+							"SNS:RemovePermission",
+							"SNS:DeleteTopic",
+							"SNS:Subscribe",
+							"SNS:ListSubscriptionsByTopic",
+							"SNS:Publish",
+							"SNS:Receive"
+						],
+						"Resource": {
+							"Ref": "topicMrText"
+						},
+						"Condition": {
+							"StringEquals": {
+								"AWS:SourceOwner": "476225084366"
+							}
+						}
+					}]
+				}
+			}
+		},
+		"s3policymrtext": {
+			"Type": "AWS::S3::BucketPolicy",
+			"Properties": {
+				"Bucket": {
+					"Ref": "s3mrtext"
+				},
+				"PolicyDocument": {
+					"Version": "2012-10-17",
+					"Id": "Policy1479902243682",
+					"Statement": [{
+						"Sid": "Stmt1479902232472",
+						"Effect": "Allow",
+						"Principal": {
+							"AWS": "*"
+						},
+						"Action": "s3:GetObject",
+						"Resource": {
+							"Fn::Join": [
+								"", [
+									"arn:aws:s3:::", {
+										"Ref": "s3mrtext"
+									},
+									"/*"
+								]
+							]
+						}
+					}]
+				}
+			}
+		}
+	},
+	"Description": ""
+}

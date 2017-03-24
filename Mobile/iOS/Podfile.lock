@@ -1,0 +1,54 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AWSCognito (2.4.9):
+    - AWSCore (= 2.4.9)
+  - AWSCognitoIdentityProvider (2.4.9):
+    - AWSCore (= 2.4.9)
+  - AWSCore (2.4.9)
+  - AWSDynamoDB (2.4.9):
+    - AWSCore (= 2.4.9)
+  - AWSS3 (2.4.9):
+    - AWSCore (= 2.4.9)
+  - AWSSNS (2.4.9):
+    - AWSCore (= 2.4.9)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - MBProgressHUD (1.0.0)
+  - ReachabilitySwift (3)
+  - SCSiriWaveformView (1.0.3)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AWSCognito
+  - AWSCognitoIdentityProvider
+  - AWSDynamoDB
+  - AWSS3
+  - AWSSNS
+  - JSQMessagesViewController (~> 7.3)
+  - MBProgressHUD (~> 1.0.0)
+  - ReachabilitySwift (~> 3)
+  - SCSiriWaveformView
+  - SDWebImage (~> 3.8)
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AWSCognito: 4fa9fefcadae1d8425b01cbde27d564c21e3fd35
+  AWSCognitoIdentityProvider: 34707960c3bd3f4956cb3b9a129dfda12376bd40
+  AWSCore: 175208358b95492e0ebe0337df2ab415300bddac
+  AWSDynamoDB: ba9d90dd6d632197bf24baad824fa918568ba8e6
+  AWSS3: e4959b48db48d5f3dcd5cdf9e24a07f60a313611
+  AWSSNS: 85513f30d76556ff43bc0772e65f1a74008a488f
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  SCSiriWaveformView: b8b2756af42addcd31900c3945f24edafefb5395
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+
+PODFILE CHECKSUM: 43d116bac86c458592de054df1f7948edfdb5b99
+
+COCOAPODS: 1.0.1
